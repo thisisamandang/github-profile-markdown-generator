@@ -1,9 +1,6 @@
 import React, { useState, useRef } from "react";
 import { icons, categorizedSkills } from "@/constants/skills";
-import {
-  MagnifyingGlassCircleIcon,
-  ExclamationCircleIcon,
-} from "@heroicons/react/20/solid";
+
 function Skills(props) {
   const { skills, handleSkillsChange } = props;
   const [search, setSearch] = useState("");
