@@ -13,34 +13,28 @@ import Skills from "./helpers/Skills";
 import Socials from "./helpers/Socials";
 import NextButton from "./UI/NextButton";
 import Stats from "./Stats";
+const KeepCacheUpdated = ({ prefix, data, link, social, skills, support }) => {
+  useEffect(() => {
+    localStorage.setItem(
+      "cache",
+      JSON.stringify({
+        prefix,
+        data,
+        link,
+        social,
+        skills,
+        support,
+      })
+    );
+  }, [prefix, data, link, social, skills, support]);
+};
+const DEF_SKILLS = initialSkillState;
+
 function About({ back }) {
   const [isShown, setIsShown] = useState(false);
   function onNext() {
     setIsShown(true);
   }
-  const DEF_SKILLS = initialSkillState;
-  const KeepCacheUpdated = ({
-    prefix,
-    data,
-    link,
-    social,
-    skills,
-    support,
-  }) => {
-    useEffect(() => {
-      localStorage.setItem(
-        "cache",
-        JSON.stringify({
-          prefix,
-          data,
-          link,
-          social,
-          skills,
-          support,
-        })
-      );
-    }, [prefix, data, link, social, skills, support]);
-  };
   const [prefix, setPrefix] = useState(DEF_PREFIX);
   const [data, setData] = useState(DEF_DATA);
   const [link, setLink] = useState(DEF_LINK);
@@ -77,7 +71,7 @@ function About({ back }) {
     change[field] = e.target.value;
     setSocial(change);
   };
-
+  KeepCacheUpdated({ prefix, data, link, social, skills, support });
   return (
     <>
       {isShown ? (
