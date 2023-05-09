@@ -6,6 +6,7 @@ import {
   DEF_LINK,
   DEF_SOCIAL,
   DEF_SUPPORT,
+  USER,
 } from "../constants/defaults";
 import Title from "./helpers/Title";
 import Work from "./helpers/Work";
@@ -24,17 +25,20 @@ const KeepCacheUpdated = ({ prefix, data, link, social, skills, support }) => {
         social,
         skills,
         support,
+        USER,
       })
     );
-  }, [prefix, data, link, social, skills, support]);
+  }, [prefix, data, link, social, skills, support, USER]);
 };
 const DEF_SKILLS = initialSkillState;
 
 function About({ back }) {
   const [isShown, setIsShown] = useState(false);
+  console.log(USER.github);
   function onNext() {
     setIsShown(true);
   }
+
   const [prefix, setPrefix] = useState(DEF_PREFIX);
   const [data, setData] = useState(DEF_DATA);
   const [link, setLink] = useState(DEF_LINK);
@@ -60,17 +64,18 @@ function About({ back }) {
     setLink(change);
   };
 
-  const handleSkillsChange = (field) => {
+  const handleSkillsChange = (field, e) => {
     const change = { ...skills };
     change[field] = !change[field];
     setSkills(change);
   };
 
-  const handleSocialChange = (field) => {
+  const handleSocialChange = (field, e) => {
     const change = { ...social };
     change[field] = e.target.value;
     setSocial(change);
   };
+
   KeepCacheUpdated({ prefix, data, link, social, skills, support });
   return (
     <>

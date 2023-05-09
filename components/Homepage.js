@@ -4,19 +4,22 @@ import {
   ArrowRightCircleIcon,
 } from "@heroicons/react/24/outline";
 import About from "./About";
+import { USER } from "../constants/defaults";
+
 function Homepage() {
   const [isShown, setIsShown] = useState(false);
-  const [input, setInput] = useState("");
-
+  const [input, setInput] = useState(USER);
   function onNext() {
     if (input != "") {
+      USER.github = input;
       setIsShown(true);
     }
   }
+
   return (
     <>
       {isShown ? (
-        <About back={() => setIsShown(false)} onNext={onNext} />
+        <About back={() => setIsShown(false)} />
       ) : (
         <div>
           <div className="flex flex-col w-full text-center justify-center">

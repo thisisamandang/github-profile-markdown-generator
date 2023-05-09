@@ -42,6 +42,9 @@ export const DEF_SOCIAL = {
   hashnode: "",
   codepen: "",
 };
+export const USER = {
+  github: "",
+};
 
 export const DEF_SUPPORT = {
   buyMeACoffee: "",
