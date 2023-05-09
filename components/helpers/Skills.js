@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { icons, categorizedSkills } from "@/constants/skills";
 
 function Skills(props) {
@@ -21,10 +21,13 @@ function Skills(props) {
         />
         <span className="checkbox-label__control" />
         <img
-          className="ml-4 w-8 h-8 sm:w-10 sm:h-10"
+          className="ml-4 w-8 h-8 sm:w-10 sm:h-10 peer"
           src={icons[skill]}
           alt={skill}
         />
+        <p className="invisible peer-hover:visible text-sm ml-4 bg-slate-400 text-black rounded-md p-1 text-transform: capitalize ">
+          {skill}
+        </p>
       </label>
     </div>
   );
@@ -39,7 +42,9 @@ function Skills(props) {
   return (
     <div className="flex justify-start flex-col items-start w-full px-2 sm:px-6 mb-10">
       <div className="text-3xl sm:text-2xl font-title mt-2 mb-6">
-        Skills
+        <div className="text-3xl sm:text-2xl font-bold font-title mt-2 ">
+          Skills
+        </div>
         <div className="relative flex justify-end">
           <input
             type="text"

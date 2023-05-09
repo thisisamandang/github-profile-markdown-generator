@@ -10,8 +10,14 @@ import {
 import Title from "./helpers/Title";
 import Work from "./helpers/Work";
 import Skills from "./helpers/Skills";
-import Social from "./helpers/Social";
+import Socials from "./helpers/Socials";
+import NextButton from "./UI/NextButton";
+import Stats from "./Stats";
 function About({ back }) {
+  const [isShown, setIsShown] = useState(false);
+  function onNext() {
+    setIsShown(true);
+  }
   const DEF_SKILLS = initialSkillState;
   const KeepCacheUpdated = ({
     prefix,
@@ -65,24 +71,38 @@ function About({ back }) {
     change[field] = !change[field];
     setSkills(change);
   };
+
+  const handleSocialChange = (field) => {
+    const change = { ...social };
+    change[field] = e.target.value;
+    setSocial(change);
+  };
+
   return (
-    <div className="m-4 sm:p-4">
-      <Title
-        data={data}
-        prefix={prefix}
-        handleDataChange={handleDataChange}
-        handlePrefixChange={handlePrefixChange}
-      />
-      <Work
-        data={data}
-        prefix={prefix}
-        handleDataChange={handleDataChange}
-        handlePrefixChange={handlePrefixChange}
-        handleLinkChange={handleLinkChange}
-      />
-      <Skills skills={skills} handleSkillsChange={handleSkillsChange} />
-      <Social />
-    </div>
+    <>
+      {isShown ? (
+        <Stats />
+      ) : (
+        <div className="m-4 sm:p-4">
+          <Title
+            data={data}
+            prefix={prefix}
+            handleDataChange={handleDataChange}
+            handlePrefixChange={handlePrefixChange}
+          />
+          <Work
+            data={data}
+            prefix={prefix}
+            handleDataChange={handleDataChange}
+            handlePrefixChange={handlePrefixChange}
+            handleLinkChange={handleLinkChange}
+          />
+          <Skills skills={skills} handleSkillsChange={handleSkillsChange} />
+          <Socials social={social} handleSocialChange={handleSocialChange} />
+          <NextButton onNext={onNext} />
+        </div>
+      )}
+    </>
   );
 }
 

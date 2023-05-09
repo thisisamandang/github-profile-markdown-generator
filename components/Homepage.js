@@ -17,7 +17,7 @@ function Homepage() {
   return (
     <>
       {isShown ? (
-        <About back={() => setIsShown(false)} />
+        <About back={() => setIsShown(false)} onNext={onNext} />
       ) : (
         <div>
           <div className="flex flex-col w-full text-center justify-center">
@@ -29,7 +29,7 @@ function Homepage() {
               <RocketLaunchIcon className="inline h-4 w-4 " />
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row mt-12 md:mb-52 2xl:mb-52 2xl:mt-24 lg:mb-36 lg:mt-16 items-center sm:mb-52 ">
+          <div className="flex flex-col sm:flex-row mt-12 md:mb-52 mb-60 2xl:mb-52 2xl:mt-24 lg:mb-36 lg:mt-16 items-center sm:mb-52 ">
             <form className="w-full text-center" onSubmit={onNext}>
               <input
                 type="text"

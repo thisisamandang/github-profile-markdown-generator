@@ -1,9 +1,12 @@
 export const DEF_PREFIX = {
   title: "Hi there 👋, I'm",
-  currentWork: "👷‍♀️ I'm currently working on",
-  collab: "🤝 I’m looking to collaborate on",
-  learning: "🧠 I'm Currently learning",
-  contact: "📫 How to reach me",
+  currentWork: "👷‍♀️I'm currently working on",
+  collab: "🤝I’m looking to collaborate on",
+  learning: "🧠I'm Currently learning",
+  contact: "📫How to reach me",
+  education: "🎓Education: ",
+  achievement: "😎Achievement: ",
+  fact: "😉Fun Fact",
 };
 
 export const DEF_DATA = {
@@ -13,6 +16,9 @@ export const DEF_DATA = {
   learning: "",
   collab: "",
   contact: "",
+  education: "",
+  achievement: "",
+  fact: "",
 
   twitterBadge: false,
   visitorsBadge: false,
@@ -25,22 +31,16 @@ export const DEF_LINK = {
 };
 
 export const DEF_SOCIAL = {
-  dev: "",
-  linkedin: "",
-  fb: "",
-  instagram: "",
   twitter: "",
-  dribbble: "",
-  behance: "",
+  linkedin: "",
+  instagram: "",
   medium: "",
   youtube: "",
   codechef: "",
-  hackerrank: "",
-  codeforces: "",
   leetcode: "",
-  topcoder: "",
-  hackerearth: "",
-  discord: "",
+  dev: "",
+  hashnode: "",
+  codepen: "",
 };
 
 export const DEF_SUPPORT = {
