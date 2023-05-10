@@ -23,6 +23,13 @@ export const DEF_DATA = {
   twitterBadge: false,
   visitorsBadge: false,
   badgeStyle: "flat",
+
+  stats: {
+    theme: "dark",
+    border: true,
+    private: false,
+    lifetime: false,
+  },
 };
 
 export const DEF_LINK = {
