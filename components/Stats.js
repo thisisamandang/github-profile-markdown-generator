@@ -8,12 +8,14 @@ function Stats() {
   const [border, setBorder] = useState(DEF_DATA.stats.border);
   const [privates, setPrivates] = useState(DEF_DATA.stats.private);
   const [lifetime, setLifetime] = useState(DEF_DATA.stats.lifetime);
+  const [profileViews, setProfileViews] = useState(DEF_DATA.stats.profileViews);
 
   function onNext() {
-    githubstats = `# 📊 GitHub Stats:
+    githubstats = `# 📊 Github Statistics:
   ![](${document.getElementById("stats").getAttribute("src")})<br/>
   ![](${document.getElementById("streak").getAttribute("src")})<br/>
-  ![](${document.getElementById("langs").getAttribute("src")})
+  ![](${document.getElementById("langs").getAttribute("src")})<br/>
+  ![](${document.getElementById("profileViews").getAttribute("src")})
   `;
     setIsShown(true);
   }
@@ -23,6 +25,7 @@ function Stats() {
     console.log(theme);
     DEF_DATA.lifetime = lifetime;
     DEF_DATA.private = privates;
+    DEF_DATA.profileViews = profileViews;
   });
   return (
     <>
@@ -74,8 +77,31 @@ function Stats() {
             >
               Lifetime Commits
             </button>
+            <button
+              className={
+                profileViews
+                  ? "p-2 px-4 bg-slate-700 text-white active:scale-95 transition-all ease-in-out duration-300 md:ml-3 m-2 md:m-0 rounded-lg text-base"
+                  : "p-2 px-4  bg-slate-200 text-black active:scale-95 transition-all ease-in-out duration-300 md:ml-3 m-2 md:m-0 rounded-lg text-base"
+              }
+              onClick={() => setProfileViews(!profileViews)}
+            >
+              Profile Views
+            </button>
           </div>
 
+          <p className="text-center mt-4 text-slate-400 pointer-events-none text-sm">
+            Any changes made may take a few seconds.
+          </p>
+          {profileViews ? (
+            <img
+              id="profileViews"
+              src={`https://komarev.com/ghpvc/?username=${USER.github}`}
+              alt="profile-visitors-count"
+              className="mt-4"
+            />
+          ) : (
+            <p className="mt-4"></p>
+          )}
           <div className="w-full pt-4 md:w-8/12 justify-center flex flex-col flex-wrap md:my-4">
             <img
               className="m-2 select-none pointer-events-none"
@@ -103,7 +129,6 @@ function Stats() {
             />
           </div>
           <NextButton onNext={onNext} />
-          {/* <Pagination val={2} /> */}
         </div>
       )}
     </>

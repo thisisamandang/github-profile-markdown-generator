@@ -29,6 +29,7 @@ export const DEF_DATA = {
     border: true,
     private: false,
     lifetime: false,
+    profileViews: true,
   },
 };
 
