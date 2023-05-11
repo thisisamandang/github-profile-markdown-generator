@@ -8,7 +8,7 @@ function Stats() {
   const [border, setBorder] = useState(DEF_DATA.stats.border);
   const [privates, setPrivates] = useState(DEF_DATA.stats.private);
   const [lifetime, setLifetime] = useState(DEF_DATA.stats.lifetime);
-  const [profileViews, setProfileViews] = useState(DEF_DATA.stats.profileViews);
+  const [views, setViews] = useState(DEF_DATA.stats.profileViews);
 
   function onNext() {
     githubstats = `# 📊 Github Statistics:
@@ -25,7 +25,7 @@ function Stats() {
     console.log(theme);
     DEF_DATA.lifetime = lifetime;
     DEF_DATA.private = privates;
-    DEF_DATA.profileViews = profileViews;
+    DEF_DATA.profileViews = views;
   });
   return (
     <>
@@ -79,11 +79,11 @@ function Stats() {
             </button>
             <button
               className={
-                profileViews
+                views
                   ? "p-2 px-4 bg-slate-700 text-white active:scale-95 transition-all ease-in-out duration-300 md:ml-3 m-2 md:m-0 rounded-lg text-base"
                   : "p-2 px-4  bg-slate-200 text-black active:scale-95 transition-all ease-in-out duration-300 md:ml-3 m-2 md:m-0 rounded-lg text-base"
               }
-              onClick={() => setProfileViews(!profileViews)}
+              onClick={() => setViews(!views)}
             >
               Profile Views
             </button>
@@ -92,7 +92,7 @@ function Stats() {
           <p className="text-center mt-4 text-slate-400 pointer-events-none text-sm">
             Any changes made may take a few seconds.
           </p>
-          {profileViews ? (
+          {views ? (
             <img
               id="profileViews"
               src={`https://komarev.com/ghpvc/?username=${USER.github}`}
