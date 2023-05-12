@@ -16,19 +16,19 @@ function Work({
         <input
           value={prefix.currentWork}
           type="text"
-          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handlePrefixChange("currentWork", event)}
         />
         <input
           placeholder="Project"
           type="text"
-          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handleDataChange("currentWork", event)}
         />
         <input
           placeholder="Link"
           type="text"
-          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handleLinkChange("currentWork", event)}
         />
       </div>
@@ -37,19 +37,19 @@ function Work({
         <input
           value={prefix.collab}
           type="text"
-          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handlePrefixChange("collab", event)}
         />
         <input
           placeholder="Project"
           type="text"
-          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handleDataChange("collab", event)}
         />
         <input
           placeholder="Link"
           type="text"
-          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handleLinkChange("collab", event)}
         />
       </div>
@@ -58,13 +58,13 @@ function Work({
         <input
           value={prefix.learning}
           type="text"
-          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handlePrefixChange("learning", event)}
         />
         <input
           placeholder="React / Java / Python"
           type="text"
-          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handleDataChange("learning", event)}
         />
       </div>
@@ -73,13 +73,13 @@ function Work({
         <input
           value={prefix.contact}
           type="text"
-          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-24 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handlePrefixChange("contact", event)}
         />
         <input
           placeholder="janedoe@gmail.com"
           type="text"
-          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-200 outline-none bg-transparent"
+          className="border-b w-28 sm:w-40 py-1 px-2 mr-10 focus:border-pink-300 outline-none bg-transparent"
           onChange={(event) => handleDataChange("contact", event)}
         />
       </div>

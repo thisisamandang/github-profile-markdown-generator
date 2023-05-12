@@ -32,13 +32,9 @@ function Footer() {
           <LINKEDIN_SVG size={4} />
         </a>
       </div>
-      <div className="w-full flex justify-center items-center ">
-        <p className="uppercase text-lg">{"</>"} in India</p>
+      <div className="w-full text-sm flex justify-center items-center ">
+        <p className=" text-lg">{"</>"} in India</p>
       </div>
-      <p className="uppercase text-xs">
-        {" "}
-        Inspired by many open-sourced projects
-      </p>
     </div>
   );
 }

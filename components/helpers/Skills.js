@@ -49,7 +49,7 @@ function Skills(props) {
           <input
             type="text"
             onChange={(e) => onSearchChange(e.target.value)}
-            className="leading:none text-xs my-0 py-1 px-2 pr-8 sm:text-xl border-2 border-gray-900 text-black  placeholder-gray-700"
+            className=" outline-none text-xs my-0 py-1 px-2 pr-8 sm:text-xl border-2 border-slate-900 text-black  placeholder-gray-700"
             placeholder="Search Skills"
             ref={inputRef}
           />

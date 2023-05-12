@@ -24,7 +24,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="twitter"
             placeholder="Twitter Username"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 bg-transparent border-b border-white focus:border-pink-200 px-2"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 bg-transparent border-b border-white focus:border-pink-300 px-2"
             value={social.twitter}
             onChange={(event) => handleSocialChange("twitter", event)}
           />
@@ -37,7 +37,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="codepen"
             placeholder="Codepen Username"
-            className="outline-none  placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none  placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.codepen}
             onChange={(event) => handleSocialChange("codepen", event)}
           />
@@ -50,7 +50,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="linkedin"
             placeholder="LinkedIn Username"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.linkedin}
             onChange={(event) => handleSocialChange("linkedin", event)}
           />
@@ -64,7 +64,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="instagram"
             placeholder="Instagram Username"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.instagram}
             onChange={(event) => handleSocialChange("instagram", event)}
           />
@@ -75,7 +75,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="hashnode"
             placeholder="Hashnode (with @)"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.hashnode}
             onChange={(event) => handleSocialChange("hashnode", event)}
           />
@@ -85,7 +85,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="medium"
             placeholder="Medium  (with @)"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.medium}
             onChange={(event) => handleSocialChange("medium", event)}
           />
@@ -95,7 +95,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="youtube"
             placeholder="Youtube Channel Name"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.youtube}
             onChange={(event) => handleSocialChange("youtube", event)}
           />
@@ -105,7 +105,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="codechef"
             placeholder="Codechef Username"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.codechef}
             onChange={(event) => handleSocialChange("codechef", event)}
           />
@@ -117,7 +117,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="leetcode"
             placeholder="Leetcode Username"
-            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.leetcode}
             onChange={(event) => handleSocialChange("leetcode", event)}
           />
@@ -127,7 +127,7 @@ function Socials({ social, handleSocialChange }) {
           <input
             id="dev"
             placeholder="Dev.to username"
-            className="outline-none  placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-200 bg-transparent border-b border-white"
+            className="outline-none  placeholder-gray-700 w-32 sm:w-1/2 border-t-0 border-l-0 border-r-0 border solid  py-1 px-2 focus:border-pink-300 bg-transparent border-b border-white"
             value={social.dev}
             onChange={(event) => handleSocialChange("dev", event)}
           />

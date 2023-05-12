@@ -39,11 +39,11 @@ function Homepage() {
                 required={true}
                 onChange={(e) => setInput(e.target.value)}
                 autoFocus={true}
-                className="border-b text-center  bg-transparent mb-40  sm:w-11/12 md:w-8/12 lg:w-3/12 text-lg sm:text-lg md:text-lg lg:text-xl 2xl:text-3xl  outline-none focus:border-b-2 focus:border-pink-200 mr-4"
+                className="border-b text-center  bg-transparent mb-40  sm:w-11/12 md:w-8/12 lg:w-3/12 text-lg sm:text-lg md:text-lg lg:text-xl 2xl:text-3xl  outline-none focus:border-b-2 focus:border-pink-300 mr-4"
                 placeholder="Enter Your GitHub Username"
               />
               <button type="Submit">
-                <ArrowRightCircleIcon className="transition-all hover:ml-2 hover:text-pink-200 duration-100 ease-linear inline h-8 mb-1 w-8" />
+                <ArrowRightCircleIcon className="transition-all hover:ml-2 hover:text-pink-300 duration-100 ease-linear inline h-8 mb-1 w-8" />
               </button>
             </form>
           </div>

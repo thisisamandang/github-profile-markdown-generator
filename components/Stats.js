@@ -90,7 +90,7 @@ function Stats() {
           </div>
 
           <p className="text-center mt-4 text-slate-400 pointer-events-none text-sm">
-            Any changes made may take a few seconds.
+            Any changes made may take a few seconds to reflect.
           </p>
           {views ? (
             <img
