@@ -56,4 +56,7 @@ export const USER = {
 
 export const DEF_SUPPORT = {
   buyMeACoffee: "",
+  kofi: "",
+  paypal: "",
+  patreon: "",
 };

@@ -9,12 +9,13 @@ import {
   USER,
 } from "../constants/defaults";
 import Title from "./helpers/Title";
+
 import Work from "./helpers/Work";
 import Skills from "./helpers/Skills";
 import Socials from "./helpers/Socials";
 import NextButton from "./UI/NextButton";
 import Stats from "./Stats";
-const KeepCacheUpdated = ({ prefix, data, link, social, skills, support }) => {
+const KeepCacheUpdated = ({ prefix, data, link, social, skills }) => {
   useEffect(() => {
     localStorage.setItem(
       "cache",
@@ -24,11 +25,10 @@ const KeepCacheUpdated = ({ prefix, data, link, social, skills, support }) => {
         link,
         social,
         skills,
-        support,
         USER,
       })
     );
-  }, [prefix, data, link, social, skills, support, USER]);
+  }, [prefix, data, link, social, skills, USER]);
 };
 const DEF_SKILLS = initialSkillState;
 
@@ -43,7 +43,7 @@ function About({ back }) {
   const [data, setData] = useState(DEF_DATA);
   const [link, setLink] = useState(DEF_LINK);
   const [social, setSocial] = useState(DEF_SOCIAL);
-  const [support, setSupport] = useState(DEF_SUPPORT);
+
   const [skills, setSkills] = useState(DEF_SKILLS);
 
   const handleDataChange = (field, e) => {
@@ -76,29 +76,39 @@ function About({ back }) {
     setSocial(change);
   };
 
-  KeepCacheUpdated({ prefix, data, link, social, skills, support });
+  KeepCacheUpdated({ prefix, data, link, social, skills });
   return (
     <>
       {isShown ? (
-        <Stats />
+        <Stats back={() => setIsShown(false)} />
       ) : (
-        <div className="m-4 sm:p-4">
-          <Title
-            data={data}
-            prefix={prefix}
-            handleDataChange={handleDataChange}
-            handlePrefixChange={handlePrefixChange}
-          />
-          <Work
-            data={data}
-            prefix={prefix}
-            handleDataChange={handleDataChange}
-            handlePrefixChange={handlePrefixChange}
-            handleLinkChange={handleLinkChange}
-          />
-          <Skills skills={skills} handleSkillsChange={handleSkillsChange} />
-          <Socials social={social} handleSocialChange={handleSocialChange} />
-          <NextButton onNext={onNext} />
+        <div>
+          <div className="flex  items-center fade-on-appear">
+            <button
+              className="left-0  m-10 font-bold hover:text-pink-300 transition-all ease-in-out outline-none"
+              onClick={back}
+            >
+              {"<"} Back {"/>"}
+            </button>
+          </div>
+          <div className="m-4 sm:p-4">
+            <Title
+              data={data}
+              prefix={prefix}
+              handleDataChange={handleDataChange}
+              handlePrefixChange={handlePrefixChange}
+            />
+            <Work
+              data={data}
+              prefix={prefix}
+              handleDataChange={handleDataChange}
+              handlePrefixChange={handlePrefixChange}
+              handleLinkChange={handleLinkChange}
+            />
+            <Skills skills={skills} handleSkillsChange={handleSkillsChange} />
+            <Socials social={social} handleSocialChange={handleSocialChange} />
+            <NextButton onNext={onNext} />
+          </div>
         </div>
       )}
     </>

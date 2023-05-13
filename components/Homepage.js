@@ -21,7 +21,7 @@ function Homepage() {
       {isShown ? (
         <About back={() => setIsShown(false)} />
       ) : (
-        <div>
+        <div className="fade-on-appear">
           <div className="flex flex-col w-full text-center justify-center">
             <p className="text-3xl lg:mt-8 sm:text-5xl md:text-7xl 2xl:text-8xl p-4 mt-8">
               Github Profile Markdown Generator

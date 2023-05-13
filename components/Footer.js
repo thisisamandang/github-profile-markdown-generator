@@ -33,7 +33,9 @@ function Footer() {
         </a>
       </div>
       <div className="w-full text-sm flex justify-center items-center ">
-        <p className=" text-lg">{"</>"} in India</p>
+        <p className=" text-lg pointer-events-none select-none">
+          {"</>"} in India
+        </p>
       </div>
     </div>
   );

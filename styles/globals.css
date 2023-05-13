@@ -8,3 +8,15 @@ html {
   color: white;
   background-color: rgb(13, 17, 23);
 }
+.fade-on-appear {
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
