@@ -1,3 +1,5 @@
+import { initialSkillState } from "./skills";
+
 export const DEF_PREFIX = {
   title: "Hi there 👋, I'm",
   currentWork: "👷‍♀️I'm currently working on",
@@ -60,3 +62,4 @@ export const DEF_SUPPORT = {
   paypal: "",
   patreon: "",
 };
+export const DEF_SKILLS = initialSkillState;

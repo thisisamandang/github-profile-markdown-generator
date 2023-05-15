@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { DEF_DATA, USER } from "../constants/defaults";
+import { DEF_DATA, USER, DEF_SOCIAL, DEF_SKILLS } from "../constants/defaults";
 import NextButton from "./UI/NextButton";
 import Homepage from "./Homepage";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Support from "./helpers/Support";
-function Stats({ back }) {
+function Stats({ back, skills, prefix, data, link, social, USER }) {
   const [isShown, setIsShown] = useState(false);
   const [theme, setTheme] = useState(DEF_DATA.stats.theme);
   const [border, setBorder] = useState(DEF_DATA.stats.border);
@@ -21,7 +21,7 @@ function Stats({ back }) {
   `;
     setIsShown(true);
   }
-
+  console.log(skills);
   useEffect(() => {
     DEF_DATA.theme = theme;
 
@@ -32,7 +32,15 @@ function Stats({ back }) {
   return (
     <>
       {isShown ? (
-        <Support back={() => setIsShown(false)} />
+        <Support
+          prefix={prefix}
+          data={data}
+          link={link}
+          social={social}
+          USER={USER}
+          skills={skills}
+          back={() => setIsShown(false)}
+        />
       ) : (
         <div className="fade-on-appear">
           <div className="flex justify-start ">

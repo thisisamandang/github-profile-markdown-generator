@@ -7,7 +7,7 @@ function NextButton({ onNext }) {
         onClick={onNext}
         className="bg-white font-semibold rounded-md p-2  hover:bg-pink-300 transition duration-300 ease-in-out text-black"
       >
-        <ArrowRightIcon className="h-8 w-10" />
+        {"<"} Next {"/>"}
       </button>
     </div>
   );

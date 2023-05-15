@@ -6,7 +6,7 @@ import { DEF_SUPPORT } from "@/constants/defaults";
 import NextButton from "../UI/NextButton";
 import Markdown from "../Markdown";
 
-function Support({ back }) {
+function Support({ back, skills, prefix, data, link, social, USER }) {
   const [isShown, setIsShown] = useState(false);
   const [support, setSupport] = useState(DEF_SUPPORT);
   const handleSupportChange = (field, e) => {
@@ -17,17 +17,27 @@ function Support({ back }) {
   function onNext() {
     setIsShown(true);
   }
-
+  console.log(skills);
   useEffect(() => {
     DEF_SUPPORT.buyMeACoffee = support.buyMeACoffee;
     DEF_SUPPORT.kofi = support.kofi;
     DEF_SUPPORT.paypal = support.paypal;
     DEF_SUPPORT.patreon = support.patreon;
   });
+
   return (
     <>
       {isShown ? (
-        <Markdown back={() => setIsVisible(false)} />
+        <Markdown
+          prefix={prefix}
+          data={data}
+          link={link}
+          social={social}
+          USER={USER}
+          skills={skills}
+          support={support}
+          back={() => setIsShown(false)}
+        />
       ) : (
         <div className="fade-on-appear">
           <button

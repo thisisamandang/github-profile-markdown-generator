@@ -7,6 +7,7 @@ import {
   DEF_SOCIAL,
   DEF_SUPPORT,
   USER,
+  DEF_SKILLS,
 } from "../constants/defaults";
 import Title from "./helpers/Title";
 
@@ -30,7 +31,7 @@ const KeepCacheUpdated = ({ prefix, data, link, social, skills }) => {
     );
   }, [prefix, data, link, social, skills, USER]);
 };
-const DEF_SKILLS = initialSkillState;
+// const DEF_SKILLS = initialSkillState;
 
 function About({ back }) {
   const [isShown, setIsShown] = useState(false);
@@ -77,10 +78,19 @@ function About({ back }) {
   };
 
   KeepCacheUpdated({ prefix, data, link, social, skills });
+  console.log(DEF_SKILLS);
   return (
     <>
       {isShown ? (
-        <Stats back={() => setIsShown(false)} />
+        <Stats
+          skills={skills}
+          prefix={prefix}
+          data={data}
+          link={link}
+          social={social}
+          USER={USER}
+          back={() => setIsShown(false)}
+        />
       ) : (
         <div>
           <div className="flex  items-center fade-on-appear">
