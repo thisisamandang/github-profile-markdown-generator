@@ -13,18 +13,36 @@ function Stats({ back, skills, prefix, data, link, social, USER }) {
   const [views, setViews] = useState(DEF_DATA.stats.profileViews);
 
   function onNext() {
-    githubstats = `# 📊 Github Statistics:
-  ![](${document.getElementById("stats").getAttribute("src")})<br/>
-  ![](${document.getElementById("streak").getAttribute("src")})<br/>
-  ![](${document.getElementById("langs").getAttribute("src")})<br/>
-  ![](${document.getElementById("profileViews").getAttribute("src")})
+    githubstats = `
+    <br/>
+    <p>&nbsp;<img align="center" src="${document
+      .getElementById("stats")
+      .getAttribute("src")} "/></p><br/>
+    <p>&nbsp;<img align="center" src="${document
+      .getElementById("streak")
+      .getAttribute("src")} "/></p><br/>
+    <p>&nbsp;<img align="center" src="${document
+      .getElementById("langs")
+      .getAttribute("src")}"/></p><br/>
+    <p>&nbsp;<img align="left" src="${document
+      .getElementById("profileViews")
+      .getAttribute("src")}"/> </p><hr/>
   `;
+    statsLink = `${document.getElementById("stats").getAttribute("src")}`;
+
+    streaksLink = `${document.getElementById("streak").getAttribute("src")}`;
+
+    topLangLink = `${document.getElementById("langs").getAttribute("src")}`;
+
+    profileViewsLink = `${document
+      .getElementById("profileViews")
+      .getAttribute("src")}`;
     setIsShown(true);
   }
+
   console.log(skills);
   useEffect(() => {
     DEF_DATA.theme = theme;
-
     DEF_DATA.lifetime = lifetime;
     DEF_DATA.private = privates;
     DEF_DATA.profileViews = views;
@@ -168,3 +186,7 @@ const themes = [
 
 export default Stats;
 export var githubstats = ``;
+export var statsLink = ``;
+export var streaksLink = ``;
+export var topLangLink = ``;
+export var profileViewsLink = ``;

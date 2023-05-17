@@ -62,4 +62,8 @@ export const DEF_SUPPORT = {
   paypal: "",
   patreon: "",
 };
+
+export const finalData = {
+  finalData: "",
+};
 export const DEF_SKILLS = initialSkillState;
