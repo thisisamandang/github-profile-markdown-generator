@@ -181,16 +181,7 @@ const DisplaySupport = (props) => {
 
 function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
   const [preview, setIsPreview] = useState(false);
-  var md = require("markdown-it")({
-    html: true,
-    linkify: true,
-    typographer: true,
-    breaks: true,
-    quotes: "“”‘’",
-    highlight: function (/*str, lang*/) {
-      return "";
-    },
-  });
+
   function onCopy() {
     const range = document.createRange();
     range.selectNode(document.getElementById("content"));
