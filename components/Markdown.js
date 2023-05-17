@@ -417,6 +417,10 @@ function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
           <div></div>
         )}
       </div>
+      <div className="text-sm text-center mt-6">
+        *This is an Open Source project. Feel Free to contribute and add more
+        useful features*
+      </div>
     </div>
   );
 }
