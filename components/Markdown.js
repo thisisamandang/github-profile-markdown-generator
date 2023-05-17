@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { icons, skills as SKILLS, skillWebsites } from "../constants/skills";
 import { githubstats } from "./Stats";
 import MarkdownPreview from "./MarkdownPreview";
@@ -180,6 +181,45 @@ const DisplaySupport = (props) => {
 
 function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
   const [preview, setIsPreview] = useState(false);
+  var md = require("markdown-it")({
+    html: true,
+    linkify: true,
+    typographer: true,
+    breaks: true,
+    quotes: "“”‘’",
+    highlight: function (/*str, lang*/) {
+      return "";
+    },
+  });
+  function onCopy() {
+    const range = document.createRange();
+    range.selectNode(document.getElementById("content"));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+
+    copied();
+  }
+  const onDownload = () => {
+    const content = document.getElementById("content");
+    const tempElement = document.createElement("a");
+    tempElement.setAttribute(
+      "href",
+      `data:text/markdown;charset=utf-8,${encodeURIComponent(
+        content.innerText
+      )}`
+    );
+    tempElement.setAttribute("download", "Readme.md");
+    tempElement.style.display = "none";
+    document.body.appendChild(tempElement);
+    tempElement.click();
+    document.body.removeChild(tempElement);
+
+    downloaded();
+  };
+  const downloaded = () => toast("Download Initiated!");
+  const copied = () => toast("Copied Succesfully!");
 
   console.log(social);
   const iconBaseURL =
@@ -193,28 +233,34 @@ function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
         {"<"} Back {"/>"}
       </button>
       <h1 className="text-center text-2xl md:mb-6">Here You Go Chief!</h1>
-      <div>
-        <button
-          className="left-0 m-10 hover:text-pink-300 transition-all duration-300 ease-in-out outline-none"
-          onClick={(e) => {
-            setIsPreview(!preview);
-          }}
-        >
-          {"<"} preview {"/>"}
-        </button>
-        <button
-          className="left-0 m-10 hover:text-pink-300 transition-all duration-300 ease-in-out outline-none"
-          onClick={(e) => {
-            setIsPreview(!preview);
-          }}
-        >
-          {"<"} copy {"/>"}
-        </button>
+      <div className="flex  justify-center items-center ">
+        <div className="border mt-4 rounded-md p-6 mb-7 order-slate-200 hover:border-slate-500 transition-all ease-in-out duration-200">
+          <button
+            className="left-0 mx-4 hover:text-pink-300 transition-all duration-300 ease-in-out outline-none"
+            onClick={(e) => {
+              setIsPreview(!preview);
+            }}
+          >
+            {"<"} Preview {"/>"}
+          </button>
+          <button
+            className="left-0 mx-4 hover:text-pink-300 transition-all duration-300 ease-in-out outline-none"
+            onClick={onCopy}
+          >
+            {"<"} Copy {"/>"}
+          </button>
+          <button
+            className="left-0 mx-4  hover:text-pink-300 transition-all duration-300 ease-in-out outline-none"
+            onClick={onDownload}
+          >
+            {"<"} Download {"/>"}
+          </button>
+        </div>
       </div>
       <div className="break-words w-full flex flex-col items-center md:flex-row">
         <div
           id="content"
-          className="border  md:w-1/3 rounded-xl w-5/6 flex-grow  ml-4 mr-4 mb-6 md:mb-0 p-4"
+          className="border border-slate-200  hover:border-slate-500 transition-all ease-in-out duration-200 fade-on-appear select-none md:w-1/3 rounded-xl w-5/6 flex-grow  ml-4 mr-4 mb-6 md:mb-0 p-4"
         >
           <>
             <Title prefix={prefix.title} title={data.title} />
@@ -354,17 +400,19 @@ function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
           </>
         </div>
         {preview ? (
-          <div className="border md:w-1/3 w-5/6 flex-grow rounded-xl ml-4 mr-4  p-4">
-            <MarkdownPreview
-              prefix={prefix}
-              data={data}
-              link={link}
-              social={social}
-              USER={USER}
-              skills={skills}
-              support={support}
-            />{" "}
-          </div>
+          <>
+            <div className="border border-slate-200 hover:border-slate-500 transition-all ease-in-out duration-200  md:w-1/3 fade-on-appear w-5/6 flex-grow rounded-xl ml-4 mr-4  p-4">
+              <MarkdownPreview
+                prefix={prefix}
+                data={data}
+                link={link}
+                social={social}
+                USER={USER}
+                skills={skills}
+                support={support}
+              />{" "}
+            </div>
+          </>
         ) : (
           <div></div>
         )}
