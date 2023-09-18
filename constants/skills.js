@@ -137,6 +137,7 @@ const categorizedSkills = {
       "vagrant",
       "circleci",
       "travisci",
+      "ansible",
     ],
   },
 
@@ -271,6 +272,7 @@ const icons = {
   javascript:
     "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
   ionic: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg",
+  swiftui: ""
   laravel:
     "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain-wordmark.svg",
   meteor:
@@ -567,6 +569,7 @@ const skillWebsites = {
   cypress: "https://www.cypress.io",
   selenium: "https://www.selenium.dev",
   puppeteer: "https://github.com/puppeteer/puppeteer",
+  ansible: "https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg"
   karma: "https://karma-runner.github.io/latest/index.html",
   jasmine: "https://jasmine.github.io/",
   gtk: "https://www.gtk.org/",
