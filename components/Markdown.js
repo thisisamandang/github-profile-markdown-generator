@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import toast, { Toaster } from "react-hot-toast"
-import { icons, skills as SKILLS, skillWebsites } from "../constants/skills"
-import { githubstats } from "./Stats"
-import MarkdownPreview from "./MarkdownPreview"
+import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { icons, skills as SKILLS, skillWebsites } from "../constants/skills";
+import { githubstats } from "./Stats";
+import MarkdownPreview from "./MarkdownPreview";
 //   const [support, setSupport] = useState(DEF_SUPPORT);
 
 const Title = (props) => {
-  const { prefix, title } = props
+  const { prefix, title } = props;
   if (prefix && title) {
     return (
       <>
@@ -14,12 +14,12 @@ const Title = (props) => {
         <hr />
         <br />
       </>
-    )
+    );
   }
-  return ""
-}
+  return "";
+};
 const SubTitle = (props) => {
-  const { subtitle } = props
+  const { subtitle } = props;
   if (subtitle) {
     return (
       <>
@@ -27,24 +27,24 @@ const SubTitle = (props) => {
         <br />
         <br />
       </>
-    )
+    );
   }
-  return ""
-}
+  return "";
+};
 const SectionTitle = (props) => {
-  const { label } = props
+  const { label } = props;
   if (label) {
     return (
       <>
         {`<h3 align="left">${label}</h3>`}
         <br />
       </>
-    )
+    );
   }
-  return ""
-}
+  return "";
+};
 const DisplayWork = (props) => {
-  const { prefix, project, link } = props
+  const { prefix, project, link } = props;
   if (prefix && project) {
     if (link) {
       return (
@@ -53,7 +53,7 @@ const DisplayWork = (props) => {
           <br />
           <br />
         </>
-      )
+      );
     }
     return (
       <>
@@ -61,7 +61,7 @@ const DisplayWork = (props) => {
         <br />
         <br />
       </>
-    )
+    );
   }
   if (prefix && link) {
     return (
@@ -71,26 +71,26 @@ const DisplayWork = (props) => {
         <br />
         <br />
       </>
-    )
+    );
   }
-  return ""
-}
+  return "";
+};
 const DisplaySocial = (props) => {
-  const { username, base, icon } = props
+  const { username, base, icon } = props;
   if (username) {
     return (
       <>
         {`<a href="${base}/${username}" target="blank"><img align="center" src="${icon}" alt="${username}" height="30" width="40" /></a>`}
         <br />
       </>
-    )
+    );
   }
-  return ""
-}
+  return "";
+};
 
 const TwitterBadge = (props) => {
-  const { twitter, show, base } = props
-  const link = `https://img.shields.io/twitter/follow/${twitter}?logo=twitter&style=for-the-badge`
+  const { twitter, show, base } = props;
+  const link = `https://img.shields.io/twitter/follow/${twitter}?logo=twitter&style=for-the-badge`;
   if (show) {
     return (
       <>
@@ -98,21 +98,21 @@ const TwitterBadge = (props) => {
         <br />
         <br />
       </>
-    )
+    );
   }
-  return ""
-}
+  return "";
+};
 function isSocial(obj) {
   for (const key in obj) {
     if (obj.hasOwnProperty(key) && obj[key]) {
-      return true // Found a non-empty key
+      return true; // Found a non-empty key
     }
   }
-  return false
+  return false;
 }
 const DisplaySkills = (props) => {
-  const { skills } = props
-  const listChosenSkills = []
+  const { skills } = props;
+  const listChosenSkills = [];
   SKILLS.forEach((skill) => {
     if (skills[skill]) {
       listChosenSkills.push(
@@ -123,9 +123,9 @@ const DisplaySkills = (props) => {
           </a>
          
           `
-      )
+      );
     }
-  })
+  });
   return listChosenSkills.length > 0 ? (
     <>
       <SectionTitle label="Languages and Tools:" />
@@ -136,24 +136,24 @@ const DisplaySkills = (props) => {
     </>
   ) : (
     ""
-  )
-}
+  );
+};
 const DisplayStats = () => {
   return (
     <>
       <SectionTitle label="Github Stats:" />
       {githubstats};
     </>
-  )
-}
+  );
+};
 const DisplaySupport = (props) => {
-  const { support } = props
-  let viewSupport = false
+  const { support } = props;
+  let viewSupport = false;
   Object.keys(support).forEach((key) => {
     if (support[key]) {
-      viewSupport = true
+      viewSupport = true;
     }
-  })
+  });
   return viewSupport ? (
     <div>
       <SectionTitle label="Support:" />
@@ -176,58 +176,58 @@ const DisplaySupport = (props) => {
     </div>
   ) : (
     ""
-  )
-}
+  );
+};
 
 function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
-  const [preview, setIsPreview] = useState(false)
+  const [preview, setIsPreview] = useState(false);
 
   function onCopy() {
-    const contentElement = document.getElementById("content")
+    const contentElement = document.getElementById("content");
 
     if (contentElement) {
-      const textToCopy = contentElement.innerText || contentElement.textContent
+      const textToCopy = contentElement.innerText || contentElement.textContent;
 
-      const textarea = document.createElement("textarea")
-      textarea.value = textToCopy
-      textarea.setAttribute("readonly", "")
-      textarea.style.position = "absolute"
-      textarea.style.left = "-9999px"
+      const textarea = document.createElement("textarea");
+      textarea.value = textToCopy;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "absolute";
+      textarea.style.left = "-9999px";
 
-      document.body.appendChild(textarea)
-      textarea.select()
-      document.execCommand("copy")
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
 
-      document.body.removeChild(textarea)
-      copied()
+      document.body.removeChild(textarea);
+      copied();
     } else {
-      console.error('Element with ID "content" not found')
+      console.error('Element with ID "content" not found');
     }
   }
 
   const onDownload = () => {
-    const content = document.getElementById("content")
-    const tempElement = document.createElement("a")
+    const content = document.getElementById("content");
+    const tempElement = document.createElement("a");
     tempElement.setAttribute(
       "href",
       `data:text/markdown;charset=utf-8,${encodeURIComponent(
         content.innerText
       )}`
-    )
-    tempElement.setAttribute("download", "Readme.md")
-    tempElement.style.display = "none"
-    document.body.appendChild(tempElement)
-    tempElement.click()
-    document.body.removeChild(tempElement)
+    );
+    tempElement.setAttribute("download", "Readme.md");
+    tempElement.style.display = "none";
+    document.body.appendChild(tempElement);
+    tempElement.click();
+    document.body.removeChild(tempElement);
 
-    downloaded()
-  }
-  const downloaded = () => toast("Download Initiated!")
-  const copied = () => toast("Copied Succesfully!")
+    downloaded();
+  };
+  const downloaded = () => toast("Download Initiated!");
+  const copied = () => toast("Copied Succesfully!");
 
-  console.log(social)
+  console.log(social);
   const iconBaseURL =
-    "https://raw.githubusercontent.com/thisisamandang/github-profile-markdown-generator/main/icons/Social/"
+    "https://raw.githubusercontent.com/thisisamandang/github-profile-markdown-generator/main/icons/Social/";
   return (
     <div className="fade-on-appear">
       <button
@@ -242,7 +242,7 @@ function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
           <button
             className="left-0 mx-4 hover:text-pink-300 transition-all duration-300 ease-in-out outline-none"
             onClick={(e) => {
-              setIsPreview(!preview)
+              setIsPreview(!preview);
             }}
           >
             {"<"} Preview {"/>"}
@@ -426,7 +426,7 @@ function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
         useful features*
       </div>
     </div>
-  )
+  );
 }
 
-export default Markdown
+export default Markdown;
