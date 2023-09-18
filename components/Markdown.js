@@ -183,15 +183,28 @@ function Markdown({ back, skills, prefix, data, link, social, USER, support }) {
   const [preview, setIsPreview] = useState(false);
 
   function onCopy() {
-    const range = document.createRange();
-    range.selectNode(document.getElementById("content"));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
+    const contentElement = document.getElementById("content");
 
-    copied();
+    if (contentElement) {
+      const textToCopy = contentElement.innerText || contentElement.textContent;
+
+      const textarea = document.createElement("textarea");
+      textarea.value = textToCopy;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "absolute";
+      textarea.style.left = "-9999px";
+
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+
+      document.body.removeChild(textarea);
+      copied();
+    } else {
+      console.error('Element with ID "content" not found');
+    }
   }
+
   const onDownload = () => {
     const content = document.getElementById("content");
     const tempElement = document.createElement("a");
