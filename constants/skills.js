@@ -143,7 +143,7 @@ const categorizedSkills = {
 
   baas: {
     title: "Backend as a Service(BaaS)",
-    skills: ["firebase", "appwrite", "amplify", "heroku"],
+    skills: ["firebase", "appwrite", "amplify", "heroku", "supabase"],
   },
 
   framework: {
@@ -433,6 +433,7 @@ const icons = {
   elixir: "https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-icon.svg",
   heroku: "https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg",
   appwrite: "https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg",
+  supabase: "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
   hexo: "https://www.vectorlogo.zone/logos/hexoio/hexoio-icon.svg",
   travisci: "https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg",
   apachecordova:
@@ -502,6 +503,7 @@ const skillWebsites = {
   ruby: "https://www.ruby-lang.org/en/",
   rust: "https://www.rust-lang.org",
   sass: "https://sass-lang.com",
+  supabase: "https://supabase.com/",
   scala: "https://www.scala-lang.org",
   symfony: "https://symfony.com",
   spring: "https://spring.io/",
