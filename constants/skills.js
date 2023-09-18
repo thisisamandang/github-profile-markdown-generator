@@ -312,6 +312,7 @@ const icons = {
   spring: "https://www.vectorlogo.zone/logos/springio/springio-icon.svg",
   swift:
     "https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg",
+  ansible: "https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg",
   typescript:
     "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
   linux:
@@ -550,6 +551,7 @@ const skillWebsites = {
   realm: "https://realm.io/",
   gatsby: "https://www.gatsbyjs.com/",
   gridsome: "https://gridsome.org/",
+  ansible: "https://www.ansible.com/",
   nuxtjs: "https://nuxtjs.org/",
   jekyll: "https://jekyllrb.com/",
   nextjs: "https://nextjs.org/",
@@ -568,7 +570,6 @@ const skillWebsites = {
   cypress: "https://www.cypress.io",
   selenium: "https://www.selenium.dev",
   puppeteer: "https://github.com/puppeteer/puppeteer",
-  ansible: "https://raw.githubusercontent.com/devicons/devicon/master/icons/ansible/ansible-original.svg",
   karma: "https://karma-runner.github.io/latest/index.html",
   jasmine: "https://jasmine.github.io/",
   gtk: "https://www.gtk.org/",
