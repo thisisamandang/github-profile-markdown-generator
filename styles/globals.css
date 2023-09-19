@@ -5,8 +5,6 @@
 
 html {
   font-family: "Maven Pro", sans-serif;
-  color: white;
-  background-color: rgb(13, 17, 23);
 }
 .fade-on-appear {
   animation: fadein 0.5s;
