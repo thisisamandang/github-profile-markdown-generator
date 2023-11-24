@@ -1,3 +1,3 @@
 ## Github Profile Markdown Generator
-...
-This project is open for contributions. Let's build awesome profiles
+
+This project is open for contributions.
